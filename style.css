@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0b1c2d, #02050a);
+    color: #e6f1ff;
+    min-height: 100vh;
+}
+
+/* ---------- TOPO ---------- */
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    animation: fadeSlide 2s ease forwards;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #ffd966;
+    animation: fadeSlide 2s ease forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- MENU ---------- */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 8px 12px;
+    transition: transform 0.3s;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+/* Cores específicas */
+.menu-significado { color: #5dade2; }
+.menu-anonovo { color: #48c9b0; }
+.menu-sobre { color: #fff2a8; }
+
+/* Faísca */
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 6px;
+    height: 6px;
+    background: #ffd966;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 15px #ffd966;
+}
+
+nav a:hover::after {
+    animation: spark 0.6s ease;
+}
+
+@keyframes spark {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(0); }
+}
+
+/* ---------- CONTEÚDO ---------- */
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.texto p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+/* ---------- IMAGENS ---------- */
+img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 217, 102, 0.6);
+}
+
+/* ---------- GALERIA ---------- */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* ---------- SOBRE ---------- */
+.sobre-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.sobre-container img {
+    max-width: 45%;
+}
+
+/* ---------- RODAPÉ ---------- */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #ffd966;
+    font-style: italic;
+}
